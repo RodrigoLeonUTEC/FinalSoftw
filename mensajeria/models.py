@@ -1,6 +1,7 @@
 from django.db import models
 import json
 
+
 class Usuario(models.Model):
     nombre = models.CharField(max_length=50, unique=True , primary_key=True)
     saldo = models.CharField(max_length=100)
@@ -8,9 +9,11 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombre
-    def historialoperaciones():
+
+    def historialoperaciones(self):
         return Operacion.objects.filter(usuario=self)
-    def transferir(destino ,valor):
+
+    def transferir(destino ,valor, self):
         saldo = int(self.saldo)
         if saldo >= valor:
             saldo -= valor
