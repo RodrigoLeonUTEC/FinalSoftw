@@ -30,7 +30,7 @@ def encontrar_cuenta(numero):
 
 
 @require_GET
-def listar_contactos(request):
+def contactos(request):
     minumero = request.GET.get('minumero')
     cuenta = encontrar_cuenta(minumero)
     if cuenta:
