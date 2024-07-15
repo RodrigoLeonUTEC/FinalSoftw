@@ -2,16 +2,18 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import JsonResponse
-from django.views.decorators.http import require_GET
+from django.views.decorators.http import require_GET, require_POST
 import datetime
 
+
 class Cuenta:
-    def __init__(self, numero, nombre, saldo, contactos):
-        self.numero = numero
+    def __init__(self, numero, nombre, saldo, NumerosContacto):
         self.nombre = nombre
-        self.saldo = saldo
-        self.contactos = contactos
+        self.numero = numero
+        self.saldo = int(saldo)
+        self.numerosContacto = NumerosContacto
         self.historial = []
+
 
 BD = [
     Cuenta("21345", "Arnaldo", 200, ["123", "456"]),
@@ -19,11 +21,13 @@ BD = [
     Cuenta("456", "Andrea", 300, ["21345"])
 ]
 
+
 def encontrar_cuenta(numero):
     for cuenta in BD:
         if cuenta.numero == numero:
             return cuenta
     return None
+
 
 @require_GET
 def listar_contactos(request):
@@ -34,7 +38,8 @@ def listar_contactos(request):
         return JsonResponse(contactos_info)
     return JsonResponse({"error": "Cuenta no encontrada"}, status=404)
 
-@require_GET
+
+@require_POST
 def pagar(request):
     minumero = request.GET.get('minumero')
     numerodestino = request.GET.get('numerodestino')
@@ -51,6 +56,7 @@ def pagar(request):
             return JsonResponse({"status": "Realizado", "fecha": fecha})
         return JsonResponse({"error": "Saldo insuficiente"}, status=400)
     return JsonResponse({"error": "Cuenta no encontrada"}, status=404)
+
 
 @require_GET
 def historial(request):
