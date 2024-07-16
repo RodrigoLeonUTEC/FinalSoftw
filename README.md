@@ -1,8 +1,8 @@
 # FinalSoftw
 
-P1.-
+P1.- profe tuvimos un problema con la creacion del modelo de la base de datos, no nos permitia modificarlo las columnas, espero verifique la logica, y nos considere.  
 
-P2.-
+P2.- test no se pudo probar pero pusimos posibles test
 
 P3.-
 
