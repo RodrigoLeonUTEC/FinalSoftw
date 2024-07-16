@@ -2,7 +2,7 @@ from django.db import models
 import json
 
 
-class Usuario(models.Model):
+class Cuenta(models.Model):
     nombre = models.CharField(max_length=50, unique=True , primary_key=True)
     saldo = models.CharField(max_length=100)
     NumerosContacto = models.TextField(default='[]')
@@ -30,8 +30,8 @@ class Usuario(models.Model):
 
 class Operacion(models.Model):
     id = models.AutoField(primary_key=True)
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    destino = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='destino')
+    usuario = models.ForeignKey(Cuenta, on_delete=models.CASCADE)
+    destino = models.ForeignKey(Cuenta, on_delete=models.CASCADE, related_name='destino')
     valor = models.CharField(max_length=100)
     fecha = models.DateTimeField(auto_now_add=True)
 
