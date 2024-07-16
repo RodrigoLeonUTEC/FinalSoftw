@@ -1,32 +1,26 @@
 [
     {
-        "model": "mensajeria.Usuario",
-        "pk": 1,
+        "model": "mensajeria.cuenta",
         "fields": {
-            "numero": "21345",
             "nombre": "Arnaldo",
             "saldo": 200.00,
-            "contactos": "[\"123\", \"456\"]"
+            "NumerosContacto": ["123", "456"]
         }
     },
     {
-        "model": "mensajeria.Usuario",
-        "pk": 2,
+        "model": "mensajeria.cuenta",
         "fields": {
-            "numero": "123",
             "nombre": "Luisa",
             "saldo": 400.00,
-            "contactos": "[\"21345\"]"
+            "NumerosContacto": ["21345"]
         }
     },
     {
-        "model": "mensajeria.Usuario",
-        "pk": 3,
+        "model": "mensajeria.cuenta",
         "fields": {
-            "numero": "456",
             "nombre": "Andrea",
             "saldo": 300.00,
-            "contactos": "[\"21345\"]"
+            "NumerosContacto": ["21345"]
         }
     }
 ]
