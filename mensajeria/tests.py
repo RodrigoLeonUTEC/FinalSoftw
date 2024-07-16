@@ -8,16 +8,8 @@ from .models import Usuario, Operacion
 class TestModel(TestCase):
 
     def setUp(self):
-        self.usuario = Usuario.objects.create(
-            nombre='Arnaldo',
-            saldo=200,
-            NumerosContacto=['123', '456']
-        )
-        self.mensaje = Mensaje.objects.create(
-            usuario=self.usuario,
-            texto='Hola',
-            fecha='2021-05-05 12:00:00'
-        )
+        self.usuario = Usuario.objects.create(nombre='Arnaldo', saldo=200, NumerosContacto=['123', '456'])
+        self.mensaje = Operacion.objects.create(usuario=self.usuario, texto='Hola', fecha='2021-05-05 12:00:00')
 
     def test_usuario(self):
         self.assertEqual(self.usuario.nombre, 'Arnaldo')

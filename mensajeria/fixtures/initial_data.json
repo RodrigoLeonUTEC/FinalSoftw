@@ -3,7 +3,8 @@
         "model": "mensajeria.cuenta",
         "fields": {
             "nombre": "Arnaldo",
-            "saldo": 200.00,
+            "numero": "21345",
+            "saldo": 200,
             "NumerosContacto": ["123", "456"]
         }
     },
@@ -11,15 +12,17 @@
         "model": "mensajeria.cuenta",
         "fields": {
             "nombre": "Luisa",
-            "saldo": 400.00,
-            "NumerosContacto": ["21345"]
+            "numero": "123",
+            "saldo": 400,
+            "NumerosContacto": ["456"]
         }
     },
     {
         "model": "mensajeria.cuenta",
         "fields": {
             "nombre": "Andrea",
-            "saldo": 300.00,
+            "numero": "456",
+            "saldo": 300,
             "NumerosContacto": ["21345"]
         }
     }

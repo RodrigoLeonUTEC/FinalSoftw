@@ -3,7 +3,8 @@ import json
 
 
 class Cuenta(models.Model):
-    nombre = models.CharField(max_length=50, unique=True , primary_key=True)
+    nombre = models.CharField(max_length=50)
+    numero = models.BigIntegerField(unique=True, primary_key=True)
     saldo = models.CharField(max_length=100)
     NumerosContacto = models.TextField(default='[]')
 
